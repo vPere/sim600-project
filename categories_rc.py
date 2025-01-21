@@ -3,16 +3,22 @@ import numpy as np
 import os
 
 # Define categories and scores for each firewall
-categories = ["Log Clarity", "Log Filtering", "Real-Time\nMonitoring"]
+categories = [
+    "Error\nFeedback",
+    "Diagnostics tools",
+    "Diagnostics tools\nare easy\nto find"
+]
+
+
 
 
 # Scores for each firewall
 scores = {
-    "OPNsense": [8, 8, 10],
-    "pfSense": [10, 10, 10],
-    "VNS3 Cloud Firewall": [2, 4, 5],
-    "FortiGate": [8, 10, 10],
-    "Azure Firewall": [0, 2, 0]
+    "OPNsense": [8, 9, 10],
+    "pfSense": [8, 10, 6],
+    "VNS3 Cloud Firewall": [2, 3, 6],
+    "FortiGate": [10, 5, 5],
+    "Azure Firewall": [10, 7, 5]
 }
 
 # Convert categories to angles for the radar chart
@@ -42,7 +48,7 @@ ax.legend(loc='upper left', bbox_to_anchor=(-1.15, 0.9), fontsize=12)
 #plt.title("Firewall Usability Comparison", fontsize=14, pad=20)
 
 # Ensure the output directory exists
-output_path = "output/Logs_radar_chart.png"
+output_path = "output/Troubleshooting_radar_chart.png"
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
 # Save the radar chart as a PNG image
