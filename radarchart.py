@@ -4,18 +4,21 @@ import os
 
 # Define categories and scores for each firewall
 categories = [
-    "Onboarding", "UX/UI", "Rule Management",
-    "Logging and Monitoring", "Community and Support", "Default Features",
-    "Diagnostics Tools"
+    "First steps",
+    "UI",
+    "Rule\nManagement",
+    "Logs\nand\nMonitoring",
+    "Community\nand\nSupport",
+    "Troubleshooting"
 ]
 
 # Scores for each firewall
 scores = {
-    "pfSense": [8.0, 8.4, 7.21, 10.0, 9.2, 5.5, 8.0],
-    "OPNsense": [5.6, 8.8, 7.18, 8.6, 6.7, 8.25, 9.5],
-    "FortiGate": [5.55, 6.4, 7.73, 9.2, 8.2, 7.5, 5.0],
-    "VNS3 Cloud Firewall": [2.8, 2.8, 6.15, 3.5, 4.0, 3.5, 4.5],
-    "Azure Firewall": [4.1, 5.6, 4.6, 0.6, 5.2, 2.0, 6.0]
+    "OPNsense": [5.500, 8.500, 6.000, 8.600, 6.700, 8.75],
+    "pfSense": [7.200, 8.667, 5.600, 10.000, 9.200, 8],
+    "VNS3 Cloud Firewall": [2.700, 3.500, 6.800, 3.500, 4.000, 3.25],
+    "FortiGate": [5.750, 7.125, 6.800, 9.200, 8.200, 7.5],
+    "Azure Firewall": [3.100, 5.625, 1.300, 0.600, 5.200, 8]
 }
 
 # Convert categories to angles for the radar chart
@@ -45,7 +48,7 @@ ax.legend(loc='upper left', bbox_to_anchor=(-1.15, 0.9), fontsize=12)
 #plt.title("Firewall Usability Comparison", fontsize=14, pad=20)
 
 # Ensure the output directory exists
-output_path = "output/firewall_usability_radar_chart.png"
+output_path = "output/GENERAL_radar_chart.png"
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
 # Save the radar chart as a PNG image
