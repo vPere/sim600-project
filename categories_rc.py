@@ -3,17 +3,16 @@ import numpy as np
 import os
 
 # Define categories and scores for each firewall
-categories = [
-    "Bulk Rule Handling", "Rule Filtering", "Rule \nCustomization", "Requires other objects"
-]
+categories = ["Log Clarity", "Log Filtering", "Real-Time\nMonitoring"]
+
 
 # Scores for each firewall
 scores = {
-    "OPNsense": [8, 2.5, 8, 10],
-    "pfSense": [6, 2.5, 8, 10],
-    "VNS3 Cloud Firewall": [4, 5, 10, 10],
-    "FortiGate": [4, 7.5, 10, 0],
-    "Azure Firewall": [2, 0, 3, 0]
+    "OPNsense": [8, 8, 10],
+    "pfSense": [10, 10, 10],
+    "VNS3 Cloud Firewall": [2, 4, 5],
+    "FortiGate": [8, 10, 10],
+    "Azure Firewall": [0, 2, 0]
 }
 
 # Convert categories to angles for the radar chart
@@ -43,7 +42,7 @@ ax.legend(loc='upper left', bbox_to_anchor=(-1.15, 0.9), fontsize=12)
 #plt.title("Firewall Usability Comparison", fontsize=14, pad=20)
 
 # Ensure the output directory exists
-output_path = "output/RuleManagement_radar_chart.png"
+output_path = "output/Logs_radar_chart.png"
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
 # Save the radar chart as a PNG image
